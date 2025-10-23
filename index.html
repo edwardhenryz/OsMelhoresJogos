@@ -22,25 +22,23 @@
   </style>
 </head>
 <body>
-
-  <img id="susto" src="sorriso1.jpg" alt="Susto">
+  <img id="susto" src="sorriso1.jpg" alt="susto">
   <audio id="som" src="sorriso monstro normal 2(mp3_160k).mp3"></audio>
 
   <script>
     const imagem = document.getElementById('susto');
     const som = document.getElementById('som');
 
-    // Aguardar 1 segundo e mostrar a primeira imagem
+    // Espera 1 segundo e mostra a primeira imagem + toca o som
     setTimeout(() => {
       imagem.style.display = 'block';
       som.play();
-
-      // Troca para a segunda imagem após 500ms
-      setTimeout(() => {
-        imagem.src = 'sorriso2.jpg';
-      }, 500);
     }, 1000);
-  </script>
 
+    // Troca para a segunda imagem após 0.5 segundo
+    setTimeout(() => {
+      imagem.src = 'sorriso2.jpg';
+    }, 1500);
+  </script>
 </body>
 </html>
