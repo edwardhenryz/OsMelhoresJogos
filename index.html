@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Susto!</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+    }
+    #susto {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="susto" src="sorriso1.jpg" alt="Susto">
+  <audio id="som" src="sorriso monstro normal 2(mp3_160k).mp3"></audio>
+
+  <script>
+    const imagem = document.getElementById('susto');
+    const som = document.getElementById('som');
+
+    // Aguardar 1 segundo e mostrar a primeira imagem
+    setTimeout(() => {
+      imagem.style.display = 'block';
+      som.play();
+
+      // Troca para a segunda imagem após 500ms
+      setTimeout(() => {
+        imagem.src = 'sorriso2.jpg';
+      }, 500);
+    }, 1000);
+  </script>
+
+</body>
+</html>
