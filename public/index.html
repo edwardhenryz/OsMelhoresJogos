@@ -3,52 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Os Melhores Jogos</title>
+  <title>Susto!</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
       background-color: black;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    }
+    #susto {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
       height: 100vh;
-    }
-
-    img {
-      width: 100%;
-      max-width: 600px;
-      opacity: 0;
-      transition: opacity 1.5s ease-in;
-    }
-
-    img.mostrar {
-      opacity: 1;
+      object-fit: cover;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <!-- imagem do sorriso -->
-  <img id="sorriso" src="sorriso1.jpg" alt="Sorriso">
 
-  <!-- som assustador -->
-  <audio id="som" src="susto.mp3"></audio>
+  <img id="susto" src="sorriso1.jpg" alt="Susto">
+  <audio id="som" src="sorriso monstro normal 2(mp3_160k).mp3"></audio>
 
   <script>
-    window.addEventListener("load", () => {
-      const img = document.getElementById("sorriso");
-      const som = document.getElementById("som");
+    const imagem = document.getElementById('susto');
+    const som = document.getElementById('som');
 
-      // mostra imagem e toca som
-      img.classList.add("mostrar");
-      som.play().catch(e => console.log("Som bloqueado pelo navegador"));
+    // Aguardar 1 segundo e mostrar a primeira imagem
+    setTimeout(() => {
+      imagem.style.display = 'block';
+      som.play();
 
-      // depois de 5 segundos, vai pro site principal
+      // Troca para a segunda imagem após 500ms
       setTimeout(() => {
-        window.location.href = "home.html"; // muda pro seu site principal
-      }, 5000);
-    });
+        imagem.src = 'sorriso2.jpg';
+      }, 500);
+    }, 1000);
   </script>
+
 </body>
 </html>
